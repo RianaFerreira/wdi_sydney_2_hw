@@ -1,0 +1,46 @@
+/* css comments */
+#container{
+ width: 980px;
+ margin: 0 auto 10px 70px;
+}
+
+body{
+  margin: 0;
+  font-size: 12px;
+  line-height: 17px;
+  font-family: "Times New Roman", serif;
+  color: #8e8e8e;
+}
+#logo{
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+h1{
+  font-size: 3em;
+  margin-bottom: 0;
+  line-height: 2em;
+}
+
+p{
+  line-height: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+a{
+  text-decoration: none;
+  color: #82b7da;
+}
+
+a:hover{
+  color: #20222a;
+}
+
+.logos img{
+  display: inline;
+  padding: 1px;
+  border: 6px solid #c5c5c5;
+  margin: 2px;
+}
+
+

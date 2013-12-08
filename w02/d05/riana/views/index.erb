@@ -1,0 +1,11 @@
+<div class="search_index">
+  <!-- receive file of search movie titles -->
+  <!-- loop through the file and find each title and render it on the page as a link -->
+  <h2>Movie Search History</h2>
+  <% @title_list.each do |title| %>
+    <a href="movie?title=<%= title %>" target="_blank"><%=title %></a>
+  <% end %>
+  <div></div>
+  <!-- allow the user to clear the search history list -->
+  <a class="button clear" href="/clear_history">Clear Search History</a>
+</div>

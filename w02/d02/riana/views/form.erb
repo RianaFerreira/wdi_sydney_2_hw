@@ -1,0 +1,16 @@
+<form method="GET" action="/movie">
+  <input name="title" placeholder="Movie Title">
+  <input type="submit" value="Find Movie">
+</form>
+
+<% if @movie_title %>
+  <p>Enter the movie you would like to research</p>
+    <p>Cast <span><%= @movie_info_hash["Title"] %></span><br />
+     Year <span><%= @movie_info_hash['Year'] %></span><br />
+      Genre <span><%= @movie_info_hash["Genre"] %></span> <br/>
+     Actors <span><%= @movie_info_hash["Actors"] %></span> <br/>
+     Plot <span><%= @movie_info_hash["Plot"] %></span> <br/>
+      <img src='<%= @movie_info_hash['Poster'] %>'> <br/>
+  </p>
+
+<% end %>

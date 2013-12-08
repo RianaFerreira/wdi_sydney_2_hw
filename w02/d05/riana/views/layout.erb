@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>GA Movie Finder</title>
+    <link href='http://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'></link>
+    <link rel="stylesheet" href="/style.css"></link>
+  </head>
+  <body>
+    <!-- Generic page header -->
+    <div class="header">
+    <h1 src="/057.jpg">GA Movie Finder</h1>
+    </div>
+
+    <!-- display a link to the search history from the search page -->
+    <div class="menu">
+      <ul>
+        <li><a href="/movie">Home</a></li>
+        <li><a href="/index">Search History</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+
+    <div class="form">
+      <%= yield %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+    <form method="POST" action="/subway" >
+      Where are you departing?
+      <select name="from">
+      <% @subway.each do |line,stops| %>
+          <% stops.each do |stop| %>
+            <option ><%= line %>,<%= stop %></option>
+          <% end %>
+      <% end %>
+    </select>
+    <br/>
+    What is your destination?
+    <select name="to">
+      <% @subway.each do |line,stops| %>
+          <% stops.each do |stop| %>
+            <option ><%= line %>,<%= stop %></option>
+          <% end %>
+      <% end %>
+    </select>
+      <input class="button" type="submit" value="Plan Route" />
+    </form>
+
+      <%= @route.size %> of stops on your route
+      <br />
+      Journey route: <% @route.each do |stop| %>
+      <%= stop %>
+      <br />
+    <% end %>
+

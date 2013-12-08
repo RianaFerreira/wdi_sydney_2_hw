@@ -1,0 +1,20 @@
+<!-- display the search field and the button to submit the search request to the server -->
+<form method="GET" action="/movie">
+  <input class="search" name="title" placeholder="Movie Title">
+  <input class="button" type="submit" value="Find Movie">
+</form>
+
+<!-- display a the results for the search -->
+<% if @movie_title %>
+  <h2><%= @movie_title %></h2>
+  <p>Cast: <span><%= @movie_info_hash["Title"] %></span><br />
+    Year of Release: <span><%= @movie_info_hash['Year'] %></span><br />
+    Director: <span><%= @movie_info_hash['Director'] %></span><br />
+    Genre: <span><%= @movie_info_hash["Genre"] %></span> <br/>
+    Actors: <span><%= @movie_info_hash["Actors"] %></span> <br/>
+    Plot: <span><%= @movie_info_hash["Plot"] %></span>
+  </p>
+  <img src='<%= @movie_info_hash['Poster'] %>'>
+<% end %>
+
+<!-- where do you get the box office revenue? -->

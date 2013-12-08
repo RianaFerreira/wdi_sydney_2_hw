@@ -1,0 +1,154 @@
+/*Main Page Styles*/
+.button {
+    position: relative;
+    overflow: visible;
+    display: inline-block;
+    padding: 0.5em 1em;
+    border: 1px solid #d4d4d4;
+    margin: 0;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 1px 1px 0 #fff;
+    font:11px/normal sans-serif;
+    color: #333;
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    background-color: #ececec;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#ececec));
+    background-image: -moz-linear-gradient(#f4f4f4, #ececec);
+    background-image: -ms-linear-gradient(#f4f4f4, #ececec);
+    background-image: -o-linear-gradient(#f4f4f4, #ececec);
+    background-image: linear-gradient(#f4f4f4, #ececec);
+    -moz-background-clip: padding; /* for Firefox 3.6 */
+    background-clip: padding-box;
+    border-radius: 0.2em;
+    /* IE hacks */
+    zoom: 1;
+    *display: inline;
+}
+html{
+  height: 100%;
+}
+body {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0D0D0D), to(#FF530D), color-stop(.6,#333333));
+  background-repeat: no-repeat;
+  font-family: Helvetica;;
+  color: white;
+  width: 960px;
+  height: 100%;
+  margin: auto;
+}
+/* Menu Style */
+.menu{
+  display: inline;
+  line-height: 1.5em;
+  font-size: 90%;
+  padding: 15px;
+  margin-right: 0;
+}
+
+.menu a{
+  color: white;
+  text-decoration: none;
+  display: inline;
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul{
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.menu li{
+  display: inline;
+  margin-right: 2em;
+  float: right;
+}
+
+/* Heading Styles */
+.header {
+  padding: 20px;
+  /* border-bottom: 1px dotted #FF530D; */
+}
+
+form{
+  padding: 30px;
+  border-bottom: 1px dotted #FF530D;
+  margin-bottom: 20px;
+}
+
+.search{
+  width: 30%;
+  line-height: 2em;
+  margin-right: 10px;
+}
+
+h1, h2{
+  font-family: 'Monoton', cursive;
+  color: white;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+h2{
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+p{
+  padding: 15px;
+  width: 600px;
+  display: inline;
+  float: right;
+  font-weight: bold;
+}
+span{
+  font-weight: normal;
+  position: relative;
+  display: inline;
+
+}
+img{
+  padding: 15px;
+  float: left;
+}
+
+/*Index Page Styles*/
+.search_index{
+  padding: 10px;
+  margin: auto;
+}
+.search_index a{
+  float: left;
+  clear: both;
+  padding-left: 30%;
+  margin: 10px;
+  font-size: 1em;
+  line-height: 1.5em;
+  color: white;
+}
+div .clear{
+  padding-left: 16px;
+  margin-top: 2em;
+  margin-left: 80%;
+  text-shadow: 1px 1px 0 #fff;
+  font:11px/normal sans-serif;
+  color: #333;
+}
+.about {
+  padding: 20px;
+}
+.about p{
+  width: 100%;
+  padding: 20px;
+  margin: auto;
+  font-weight: lighter;
+  text-align: justify;
+  line-height: 1.5em;
+}
+
+

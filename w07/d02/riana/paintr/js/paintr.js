@@ -1,6 +1,7 @@
 $(document).ready(function () {
   $('#add_color').click(add_color);
   $('#clear').click(clear_colors);
+  $('#monster').on('click', monsterfy);
 
   $('#colors').on('click', '.box', select_color);
   $('#canvas').on('mouseover', '.pixel', paint);
@@ -28,7 +29,8 @@ var select_color = function () {
 
 var clear_colors = function () {
   $('#colors').empty();
-  $('#selected').css('background-color', '#ffffff');
+  $('#selected').css({'background-color': '#ffffff',
+                      'background-image': 'none'});
 }
 
 var paint = function (event) {
@@ -43,3 +45,10 @@ var create_pixels = function (n) {
   });
 }
 
+var monsterfy = function () {
+
+      $('.pixel').css({'border-radius':'50%',
+                  'background-image': 'url(http://cllctr.com/image/1f3fac2dbab63e158feb090e3d158a49)',
+                  'background-size': 'cover'});
+
+}

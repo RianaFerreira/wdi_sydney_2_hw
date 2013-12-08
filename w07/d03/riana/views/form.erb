@@ -1,0 +1,46 @@
+<!-- display the search field and the button to submit the search request to the server -->
+<input class="search" name="title" placeholder="Movie Title">
+<input id="btnFind" class="button" type="button" value="Find Movie">
+
+<!-- ajax request logic -->
+<script >
+$(document).ready(function(){
+
+  $('#btnFind').click(function(){
+
+    $.ajax({
+      url:'http://omdbapi.com',
+      data:{
+        tomatoes:true,
+        t:$('.search').val()
+      },
+      type: "GET",
+      dataType:"json",
+      success:function(data){
+        console.log(data);
+        $('#title').html(data.Title);
+      }
+    });
+    // $.getJSON('http://omdbapi.com',{tomatoes:true,t:$('.search').val()}, function(data){
+    //   console.log(data);
+    //   $('#title').html(data.Title);
+    // });
+  });
+});
+</script>
+
+<!-- display a the results for the search -->
+<h2 id="title"></h2>
+<% if @movie_title %>
+  <h2 id="title"><%= @movie_title %></h2>
+  <p>Cast: <span><%= @movie_info_hash["Title"] %></span><br />
+    Year of Release: <span><%= @movie_info_hash['Year'] %></span><br />
+    Director: <span><%= @movie_info_hash['Director'] %></span><br />
+    Genre: <span><%= @movie_info_hash["Genre"] %></span> <br/>
+    Actors: <span><%= @movie_info_hash["Actors"] %></span> <br/>
+    Plot: <span><%= @movie_info_hash["Plot"] %></span>
+  </p>
+  <img src='<%= @movie_info_hash['Poster'] %>'>
+<% end %>
+
+<!-- where do you get the box office revenue? -->

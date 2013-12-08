@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.min.js"></script>
+  <script src="js/template.js"></script>
+  <title>Dynamic Posts</title>
+</head>
+<body>
+
+
+  <script id="post-template" type="text/x-handlebars-template">
+    <div>
+      <h1>{{ title }}</h1>
+      <h4>{{ date }}</h4>
+
+      {{#if author}}
+      <h2>{{ author.first_name }} {{ author.last_name}}</h2>
+      {{else}}
+      <h2>Anonymous</h2>
+      {{/if}}
+      <!-- three curly braces used to escape html, security measure -->
+      <p>{{{ body }}}</p>
+
+      <ol>
+      {{#each comments}}
+        <li>{{ body }} <i>{{ created_at }}</i></li>
+        {{ else }}
+        <li>No comments</li>
+      {{/each}}
+      </ol>
+
+    </div>
+  </script>
+</body>
+</html>
