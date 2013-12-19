@@ -1,0 +1,15 @@
+<h1>Recipe Collection</h1>
+<div class="book_index">
+  <ol>
+    <% @recipes.each do |recipe| %>
+      <li><%= link_to recipe.name, recipe_path(recipe.id) %></li>
+      <ul>
+        <li><%= recipe.course %></li>
+        <li><%= recipe.cooktime %></li>
+        <li><%= recipe.servingsize %></li>
+        <li><%= recipe.instructions %></li>
+        <li><%= image_tag recipe.image, :class => 'recipe' %></li>
+      </ul>
+    <% end %>
+  </ol>
+</div>

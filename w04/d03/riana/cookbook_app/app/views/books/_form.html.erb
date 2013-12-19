@@ -1,0 +1,30 @@
+<%= form_for @book do |f| %>
+<p>
+  <%= f.label :title %>
+  <%= f.text_field :title, :autofocus => true %>
+</p>
+<p>
+  <%= f.label :cuisine %>
+  <%= f.text_field :cuisine %>
+</p>
+<p>
+  <%= f.label :chef %>
+  <%= f.text_field :chef %>
+</p>
+<p>
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+</p>
+<p>
+  <% Recipe.order(:name).each do |recipe| %>
+    <p>
+      <!-- use this syntax to pass multiple recipe ids for a selected book from the form in an array -->
+      <%= check_box_tag 'book[recipe_ids][]', recipe.id, recipe.in?(@book.recipes) %>
+      <%= recipe.name %>
+    </p>
+  <% end %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+<% end %>

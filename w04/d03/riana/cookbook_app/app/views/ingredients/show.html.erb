@@ -1,0 +1,8 @@
+<h2><%= @ingredient.name %></h2>
+<p><%= @ingredient.measurement %></p>
+<p><%= @ingredient.cost %></p>
+<%= image_tag @ingredient.image, :class => 'recipe' %>
+<p>
+  <%= link_to 'Edit Ingredient', edit_ingredient_path(@ingredient), :class => 'button' %>
+  <%= button_to 'Delete Ingredient', ingredient_path(@ingredient), :method => 'delete', :class => 'button' %>
+</p>
