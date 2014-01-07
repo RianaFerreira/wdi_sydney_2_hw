@@ -1,5 +1,9 @@
-html, body { height: 100%; }
-#wrapper { min-height: 100%; margin: 0 auto;}
+html, body { height: 100%;}
+#wrapper {
+  display: block;
+  position: absolute;
+  width: 100%;
+}
 
 body {
   background: url('reel.jpg') center center fixed;
@@ -9,9 +13,9 @@ body {
   color: white;
 }
 
-/*-----------------*/
+/*----------------------------------------------*/
 /* Logo and header */
-/*-----------------*/
+/*----------------------------------------------*/
 #logo {
   position: relative;
   display: inline-block;
@@ -50,7 +54,6 @@ body {
 
 h1 {
   display: inline-block;
-  width: 50%;
   font-family: 'Monoton', cursive;
   text-shadow: black .1em .1em;
 }
@@ -58,11 +61,15 @@ h1 {
 /*---------------------------------------------------*/
 /* layout of search and json data returned from OMDB */
 /*---------------------------------------------------*/
-header, main {
+header, #main {
   position: relative;
   width: 100%;
-  margin: 0 auto;
   min-height: 10.5rem;
+}
+
+#main {
+  display: block;
+  width: 100%;
 }
 
 form {
@@ -75,36 +82,42 @@ form .search {
   width: 70%;
 }
 
-article,
+.movieInfo,
 aside {
   position: relative;
+  vertical-align: top;
   display: inline-block;
-  min-height: 31.25rem;
+  min-height: 21.25rem;
   min-width: 22.5rem;
   padding: 0 1em;
 }
 
-article {
-  vertical-align: top;
+.movieInfo {
   width: 60%;
-  min-height: 21.25rem;
   background-color: rgba(84, 54, 44, .5);
 }
 
-article .label {
+.movieInfo .label {
   display: inline-block;
   font-weight: 700;
   width: 10%;
   text-align: right;
-  margin-right: .5em;
+  padding-right: 1em;
+  vertical-align: top;
 }
 
-article .data {
+.movieInfo .data {
   display: inline-block;
   font-weight: 200;
   text-align: justify;
   letter-spacing: 0.1em;
   width: 80%;
+}
+
+aside {
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 aside img {

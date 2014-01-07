@@ -20,5 +20,6 @@ get '/movie' do
     @movie_info_hash = JSON @movie_info_string
   end
   #call the form to display the input field
+  puts
   erb :form
 end

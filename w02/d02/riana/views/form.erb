@@ -1,6 +1,4 @@
-
-
-<main>
+<div id="main">
   <article class="movieInfo">
     <form method="GET" action="/movie">
       <input class="search" name="title" placeholder="Movie Title">
@@ -8,7 +6,7 @@
     </form>
 
     <% if @movie_title %>
-        <p><span class="label">Title</span> <span class="data"><%= @movie_info_hash["Title"] %></span>
+        <p><span class="data"><%= @movie_info_hash["Title"] %></span>
         </p>
         <p><span class="label">Year</span> <span class="data"><%= @movie_info_hash['Year'] %></span>
         </p>
@@ -18,11 +16,10 @@
         </p>
         <p><span class="label">Plot</span> <span class="data"><%= @movie_info_hash["Plot"] %></span>
         </p>
-      </p>
   </article>
   <aside>
     <img src='<%= @movie_info_hash['Poster'] %>'>
   </aside>
       <% end %>
-</main>
+</div>
 
