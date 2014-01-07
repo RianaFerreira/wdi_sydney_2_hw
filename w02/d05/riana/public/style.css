@@ -1,45 +1,77 @@
-/*Main Page Styles*/
-.button {
-    position: relative;
-    overflow: visible;
-    display: inline-block;
-    padding: 0.5em 1em;
-    border: 1px solid #d4d4d4;
-    margin: 0;
-    text-decoration: none;
-    text-align: center;
-    text-shadow: 1px 1px 0 #fff;
-    font:11px/normal sans-serif;
-    color: #333;
-    white-space: nowrap;
-    cursor: pointer;
-    outline: none;
-    background-color: #ececec;
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#ececec));
-    background-image: -moz-linear-gradient(#f4f4f4, #ececec);
-    background-image: -ms-linear-gradient(#f4f4f4, #ececec);
-    background-image: -o-linear-gradient(#f4f4f4, #ececec);
-    background-image: linear-gradient(#f4f4f4, #ececec);
-    -moz-background-clip: padding; /* for Firefox 3.6 */
-    background-clip: padding-box;
-    border-radius: 0.2em;
-    /* IE hacks */
-    zoom: 1;
-    *display: inline;
-}
-html{
-  height: 100%;
-}
+html, body { height: 100%;}
+
 body {
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0D0D0D), to(#FF530D), color-stop(.6,#333333));
+  background: url('reel.jpg') center center fixed;
   background-repeat: no-repeat;
+  background-size: cover;
   font-family: Helvetica;;
   color: white;
-  width: 960px;
-  height: 100%;
+  width: 100%;
   margin: auto;
 }
-/* Menu Style */
+
+h1, h2 {
+  font-family: 'Monoton', cursive;
+  margin: auto;
+  text-align: center;
+  text-shadow: black .1em .1em;
+}
+
+/*----------------------------------------------*/
+/* Header                                       */
+/*----------------------------------------------*/
+header {
+  padding: 2em;
+}
+
+h1 {
+  display: inline-block;
+  width: 80%;
+}
+
+/*----------------------------------------------*/
+/* Logo                                         */
+/*----------------------------------------------*/
+#logo {
+  position: relative;
+  display: inline-block;
+  width: 5em;
+  line-height: 1em;
+  margin: 1em;
+}
+
+.reel {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: .8em;
+}
+
+#box {
+  width: 3.4em;
+  height: 2em;
+  border-radius: .3em;
+}
+
+#lens {
+  margin: .5em 0;
+  width: 1em;
+  height: 1em;
+  border-radius: .3em;
+}
+
+.reel,
+#box,
+#lens {
+  postion: relative;
+  display: inline-block;
+  box-shadow: rgba(255, 255, 255, .7) -.3em .3em;
+  border-top: .2em solid white;
+  background-color: rgba(178, 115, 92, .8);
+}
+
+/*----------------------------------------------*/
+/* Navigation menu                              */
+/*----------------------------------------------*/
 .menu{
   display: inline;
   line-height: 1.5em;
@@ -68,60 +100,92 @@ body {
   float: right;
 }
 
-/* Heading Styles */
-.header {
-  padding: 20px;
-  /* border-bottom: 1px dotted #FF530D; */
-}
+/*----------------------------------------------*/
+/* Search form                                  */
+/*----------------------------------------------*/
 
 form{
   padding: 30px;
-  border-bottom: 1px dotted #FF530D;
+  border-bottom: 1px dotted #f9f4e8;
   margin-bottom: 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, .2);
 }
 
 .search{
-  width: 30%;
+  width: 50%;
   line-height: 2em;
   margin-right: 10px;
+  box-shadow: rgb(84, 54, 44) -.3em .3em;
+  font-size: 1em;
 }
 
-h1, h2{
-  font-family: 'Monoton', cursive;
-  color: white;
-  display: block;
-  margin: auto;
-  text-align: center;
-}
+/*----------------------------------------------*/
+/* Search json data return from OMDB            */
+/*----------------------------------------------*/
 
 h2{
+  display: block;
   padding: 20px;
   margin-bottom: 10px;
 }
 
-p{
-  padding: 15px;
-  width: 600px;
-  display: inline;
-  float: right;
-  font-weight: bold;
+article {
+  padding: 2em;
 }
-span{
-  font-weight: normal;
-  position: relative;
-  display: inline;
 
+.movieInfo,
+aside {
+  position: relative;
+  vertical-align: top;
+  display: inline-block;
+  min-height: 21.25rem;
+  min-width: 20em;
+  padding: 0 1em;
 }
-img{
-  padding: 15px;
-  float: left;
+
+.movieInfo {
+  width: 60%;
+  background-color: rgba(84, 54, 44, .5);
 }
+
+.movieInfo .label {
+  display: inline-block;
+  font-weight: 700;
+  width: 15%;
+  text-align: right;
+  padding-right: 1em;
+  vertical-align: top;
+}
+
+.movieInfo .data {
+  display: inline-block;
+  font-weight: 200;
+  text-align: justify;
+  letter-spacing: 0.1em;
+  width: 75%;
+}
+
+aside {
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+aside img {
+  min-height: 21.25rem;
+}
+
+/*----------------------------------------------*/
+/* Search history                               */
+/*----------------------------------------------*/
 
 /*Index Page Styles*/
 .search_index{
   padding: 10px;
   margin: auto;
 }
+
 .search_index a{
   float: left;
   clear: both;
@@ -131,6 +195,7 @@ img{
   line-height: 1.5em;
   color: white;
 }
+
 div .clear{
   padding-left: 16px;
   margin-top: 2em;
@@ -139,9 +204,15 @@ div .clear{
   font:11px/normal sans-serif;
   color: #333;
 }
+
+/*----------------------------------------------*/
+/* About: ;                                     */
+/*----------------------------------------------*/
+
 .about {
   padding: 20px;
 }
+
 .about p{
   width: 100%;
   padding: 20px;

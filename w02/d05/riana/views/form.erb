@@ -7,14 +7,36 @@
 <!-- display a the results for the search -->
 <% if @movie_title %>
   <h2><%= @movie_title %></h2>
-  <p>Cast: <span><%= @movie_info_hash["Title"] %></span><br />
-    Year of Release: <span><%= @movie_info_hash['Year'] %></span><br />
-    Director: <span><%= @movie_info_hash['Director'] %></span><br />
-    Genre: <span><%= @movie_info_hash["Genre"] %></span> <br/>
-    Actors: <span><%= @movie_info_hash["Actors"] %></span> <br/>
-    Plot: <span><%= @movie_info_hash["Plot"] %></span>
-  </p>
-  <img src='<%= @movie_info_hash['Poster'] %>'>
+  <article>
+    <section class="movieInfo">
+      <p>
+        <span class="label">Cast</span>
+        <span class="data"><%= @movie_info_hash["Title"] %></span>
+      </p>
+      <p>
+        <span class="label">Year of Release</span>
+        <span class="data"><%= @movie_info_hash['Year'] %></span>
+      </p>
+      <p>
+        <span class="label">Director</span>
+        <span class="data"><%= @movie_info_hash['Director'] %></span>
+      </p>
+      <p>
+        <span class="label">Genre</span>
+        <span class="data"><%= @movie_info_hash["Genre"] %></span>
+      </p>
+      <p>
+        <span class="label">Actors</span>
+        <span class="data"><%= @movie_info_hash["Actors"] %></span>
+      </p>
+      <p>
+        <span class="label">Plot</span>
+        <span class="data"><%= @movie_info_hash["Plot"] %></span></p>
+    </section>
+    <aside>
+      <img src='<%= @movie_info_hash['Poster'] %>'>
+    </aside>
+  </article>
 <% end %>
 
 <!-- where do you get the box office revenue? -->
