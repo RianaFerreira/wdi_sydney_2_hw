@@ -16,7 +16,7 @@ get '/movie' do
     @omdb_url = "http://omdbapi.com/?t=#{@movie_title.gsub(" ","%20")}"
     #get the movie information from omdb in JSON string format
     @movie_info_string = HTTParty.get @omdb_url
-    #conver the JSON string to a hash
+    #convert the JSON string to a hash
     @movie_info_hash = JSON @movie_info_string
   end
   #call the form to display the input field
