@@ -5,6 +5,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-family: Helvetica;;
+  font-size: 1em;
   color: white;
   width: 100%;
   margin: auto;
@@ -15,6 +16,17 @@ h1, h2 {
   margin: auto;
   text-align: center;
   text-shadow: black .1em .1em;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  font-weight: 700;
+  font-size: 1.2em;
+  text-shadow: black -.1em .1em;
 }
 
 /*----------------------------------------------*/
@@ -72,30 +84,29 @@ h1 {
 /*----------------------------------------------*/
 /* Navigation menu                              */
 /*----------------------------------------------*/
-.menu{
+.menu,
+.menu a,
+.menu ul,
+.menu li {
   display: inline;
+}
+
+.menu {
   line-height: 1.5em;
-  font-size: 90%;
   padding: 15px;
   margin-right: 0;
 }
 
-.menu a{
-  color: white;
-  text-decoration: none;
-  display: inline;
+.menu a,
+.menu ul {
   padding: 0;
   margin: 0;
 }
 
-.menu ul{
-  display: inline;
+.menu ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
-.menu li{
-  display: inline;
+.menu li {
   margin-right: 2em;
   float: right;
 }
@@ -117,7 +128,6 @@ form{
   line-height: 2em;
   margin-right: 10px;
   box-shadow: rgb(84, 54, 44) -.3em .3em;
-  font-size: 1em;
 }
 
 /*----------------------------------------------*/
@@ -181,19 +191,29 @@ aside img {
 /*----------------------------------------------*/
 
 /*Index Page Styles*/
-.search_index{
+.searchIndex{
   padding: 10px;
   margin: auto;
 }
 
-.search_index a{
-  float: left;
-  clear: both;
-  padding-left: 30%;
-  margin: 10px;
-  font-size: 1em;
-  line-height: 1.5em;
+.searchList {
+  width: 50%;
+  padding: 1em;
+  margin: 0 auto;
+  text-align: justify;
+  background-color: rgba(84, 54, 44, .5);
+}
+
+.searchList a {
+  display: block;
+  text-decoration: none;
   color: white;
+  font-size: 1.2em;
+  letter-spacing: 0.1em;
+}
+
+.searchList a:nth-child(2n+1){
+  float: right;
 }
 
 div .clear{
@@ -209,17 +229,15 @@ div .clear{
 /* About: ;                                     */
 /*----------------------------------------------*/
 
-.about {
+.welcome {
   padding: 20px;
-}
-
-.about p{
-  width: 100%;
-  padding: 20px;
-  margin: auto;
-  font-weight: lighter;
-  text-align: justify;
+  margin: 0 auto;
+  width: 50%;
+  background-color: rgba(84, 54, 44, .5);
   line-height: 1.5em;
+  letter-spacing: .1em;
+  text-align: justify;
+  font-weight: 200;
 }
 
 

@@ -18,12 +18,13 @@ get '/movie' do
     #save the search
     @title_searched.puts(@movie_title)
     #append the title and replace spaces with %20 placeholders
-    @omdb_url = "http://omdbapi.com/?t=#{@movie_title.gsub(" ","%20")}"
+    @omdb_url = "http://omdbapi.com/?t=#{@movie_title.gsub(" ","%20")}&tomatoes=True"
     #get the movie information from omdb in JSON string format
     @movie_info_string = HTTParty.get @omdb_url
     #convert the JSON string to a hash
     @movie_info_hash = JSON @movie_info_string
   end
+
   #close the file
   @title_searched.close()
   #call the form to display the input field
@@ -57,6 +58,8 @@ get '/about' do
 end
 
 get '/clear_history' do
-  File.delete("movie.csv")
+  if File.exist?("movie.csv")
+    File.delete("movie.csv")
+  end
   erb :index_new
 end

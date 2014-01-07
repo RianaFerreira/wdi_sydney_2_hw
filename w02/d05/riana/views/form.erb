@@ -10,12 +10,20 @@
   <article>
     <section class="movieInfo">
       <p>
-        <span class="label">Cast</span>
-        <span class="data"><%= @movie_info_hash["Title"] %></span>
+        <span class="label">Box Office</span>
+        <span class="data"><%= @movie_info_hash["BoxOffice"] %></span>
       </p>
       <p>
         <span class="label">Year of Release</span>
         <span class="data"><%= @movie_info_hash['Year'] %></span>
+      </p>
+      <p>
+        <span class="label">Rating</span>
+        <span class="data"><%= @movie_info_hash['imdbRating'] %></span>
+      </p>
+      <p>
+        <span class="label">Run Time</span>
+        <span class="data"><%= @movie_info_hash['Runtime'] %></span>
       </p>
       <p>
         <span class="label">Director</span>
@@ -26,12 +34,13 @@
         <span class="data"><%= @movie_info_hash["Genre"] %></span>
       </p>
       <p>
-        <span class="label">Actors</span>
+        <span class="label">Cast</span>
         <span class="data"><%= @movie_info_hash["Actors"] %></span>
       </p>
       <p>
         <span class="label">Plot</span>
-        <span class="data"><%= @movie_info_hash["Plot"] %></span></p>
+        <span class="data"><%= @movie_info_hash["Plot"] %></span>
+      </p>
     </section>
     <aside>
       <img src='<%= @movie_info_hash['Poster'] %>'>
