@@ -16,4 +16,3 @@ Movie Finder allows you to search for any movie title. A server side JSON object
 - MDN CSS https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
 - HTML5 Doctor http://html5doctor.com/
 - One Extra Pixel http://gallery.onextrapixel.com/
-- CSS-Tricks http://css-tricks.com/parallax-background-css3/
