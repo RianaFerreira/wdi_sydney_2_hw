@@ -46,6 +46,8 @@
       <img src='<%= @movie_info_hash['Poster'] %>'>
     </aside>
   </article>
+<% else %>
+  <p class="searchList">Sorry the movie could not be found by OMDB.</p>
 <% end %>
 
 <!-- where do you get the box office revenue? -->

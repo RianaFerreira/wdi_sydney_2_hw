@@ -5,31 +5,38 @@ require 'httparty'
 require 'json'
 
 get '/movie' do
-  #create a file to store the movie titles the user searched for
+  # create a file to store the movie titles the user searched for
   @title_searched = File.new('movie.csv', 'a+')
 
-  #check if a title was entered on the form
-  #check that the title was not blank when GET submitted
-  #then display the results
+  # check if a title was entered on the form
+  # check that the title was not blank when GET submitted
+  # then display the results
 
   if params[:title] && !params[:title].empty?
-    #store the title entered on the form
+    # store the title entered on the form
     @movie_title = params[:title]
-    #save the search
-    @title_searched.puts(@movie_title)
-    #append the title and replace spaces with %20 placeholders
-    @omdb_url = "http://omdbapi.com/?t=#{@movie_title.gsub(" ","%20")}&tomatoes=True"
-    #get the movie information from omdb in JSON string format
-    @movie_info_string = HTTParty.get @omdb_url
-    #convert the JSON string to a hash
-    @movie_info_hash = JSON @movie_info_string
-  end
 
-  #close the file
-  @title_searched.close()
-  #call the form to display the input field
+    # append the title and replace spaces with %20 placeholders
+    @omdb_url = "http://omdbapi.com/?t=#{@movie_title.gsub(" ","%20")}&tomatoes=True"
+    # get the movie information from omdb in JSON string format
+    @movie_info_string = HTTParty.get @omdb_url
+    # convert the JSON string to a hash
+    @movie_info_hash = JSON @movie_info_string
+
+    # only save the search if the JSON result was successful
+    if @movie_info_hash["Response"] != "False"
+      # save the search input
+      @title_searched.puts(@movie_title)
+      # close the file
+      @title_searched.close()
+    else
+      # if the response returns and error
+      # clear the @movie_title and don't render the form data
+      @movie_title = nil
+    end
+  end
+  # call the form to display the input field
   erb :form
-  #binding.pry
 end
 
 #render the list of movie titles the user searched for  on the index page
