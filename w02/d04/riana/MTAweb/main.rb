@@ -1,4 +1,3 @@
-
 require 'pry'
 require 'sinatra'
 require 'sinatra/reloader'
@@ -11,7 +10,7 @@ subway = {
   }
 
 #
-get '/subway' do
+get '/' do
   @subway = subway
   @route = []
   erb :form
